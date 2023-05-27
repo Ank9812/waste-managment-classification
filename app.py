@@ -70,30 +70,41 @@ def processed_img(image):
 
 
 def run():
+    # Set up the layout
     st.title("Waste Management Classification ♻️")
+    st.sidebar.title("Settings")
 
+    # Instructions
+    st.markdown("Upload an image of waste, and this app will classify it into one of several categories.")
+
+    # Upload the image
     img_file = st.file_uploader("Choose an Image", type=['jpg', "png", "jpeg"])
-    if img_file is not None:
-        img = Image.open(img_file)
-        st.image(img.resize((250, 250)))
-        
-        
-        if img_file is not None:
-            predicted_class_name = processed_img(img)
-            # Map the predicted class index back to the corresponding class label
 
+    if img_file is not None:
+        # Open the image and display it
+        img = Image.open(img_file)
+        col1, col2 = st.beta_columns(2)
+        with col1:
+            st.header("Uploaded Image")
+            st.image(img.resize((250, 250)))
+
+        # Process and classify the image
+        predicted_class_name = processed_img(img)
+
+        # Display the classification result
+        with col2:
+            st.header("Classification Result")
             st.success("**Predicted : " + predicted_class_name + '**')
 
+            # Show the category of waste
             if predicted_class_name in Other_waste:
                 st.info('**Category : Non-Recyclable Waste**')
             elif predicted_class_name in Recyclable_waste:
                 st.info('**Category : Recyclable Waste**')
             elif predicted_class_name in Hazardous_Waste:
                 st.info('**Category : Recyclable Hazardous Waste**')
-
             elif predicted_class_name in Household_waste:
                 st.info('**Category : Non-Recyclable Household Waste**')
-
 
 
 
