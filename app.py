@@ -8,7 +8,8 @@ from tensorflow.keras.models import load_model
 from keras.applications.resnet  import preprocess_input
 import requests
 from bs4 import BeautifulSoup
-from keras.preprocessing.image import img_to_array
+from tensorflow.keras.preprocessing.image import img_to_array
+
 
 import tensorflow as tf
 
