@@ -72,7 +72,7 @@ def processed_img(image):
 def run():
     # Set up the layout
     st.title("Waste Management Classification ♻️")
-    st.sidebar.title("Settings")
+    
 
     # Instructions
     st.markdown("Upload an image of waste, and this app will classify it into one of several categories.")
@@ -85,7 +85,7 @@ def run():
         img = Image.open(img_file)
         col1, col2 = st.beta_columns(2)
         with col1:
-            st.header("Uploaded Image")
+            st.write("Uploaded Image")
             st.image(img.resize((250, 250)))
 
         # Process and classify the image
