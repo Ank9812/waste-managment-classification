@@ -85,7 +85,7 @@ def run():
         img = Image.open(img_file)
         col1, col2 = st.beta_columns(2)
         with col1:
-            st.write("Uploaded Image")
+            st.subheader("Uploaded Image")
             st.image(img.resize((250, 250)))
 
         # Process and classify the image
