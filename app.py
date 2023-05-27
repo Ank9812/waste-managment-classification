@@ -8,7 +8,7 @@ from tensorflow.keras.models import load_model
 from keras.applications.resnet  import preprocess_input
 import requests
 from bs4 import BeautifulSoup
-
+from keras.preprocessing.image import img_to_array
 
 import tensorflow as tf
 
@@ -49,9 +49,9 @@ Household_waste=[ 'bones',  'green_vege', 'leftovers','rotten_fruits', 'fruits_l
 
 
 index_to_class = {v: k for k, v in labels.items()}
-def processed_img(img_path):
+def processed_img(image):
     # Preprocess the image
-    img = load_img(img_path, target_size=(224, 224))
+    img = image.resize=(224, 224))
     img_array = img_to_array(img)
     img_array = np.expand_dims(img_array, axis=0)
     img_array = tf.keras.applications.resnet50.preprocess_input(img_array)
@@ -73,13 +73,12 @@ def run():
 
     img_file = st.file_uploader("Choose an Image", type=['jpg', "png", "jpeg"])
     if img_file is not None:
-        img = Image.open(img_file).resize((250, 250))
-        st.image(img)
-        image_path = img_file.name
-        with open(image_path, "wb") as f:
-            f.write(img_file.getbuffer())
+        img = Image.open(img_file)
+        st.image(img.resize((250, 250)))
+        
+        
         if img_file is not None:
-            predicted_class_name = processed_img(image_path)
+            predicted_class_name = processed_img(img)
             # Map the predicted class index back to the corresponding class label
 
             st.success("**Predicted : " + predicted_class_name + '**')
