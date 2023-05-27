@@ -75,7 +75,7 @@ def run():
     if img_file is not None:
         img = Image.open(img_file).resize((250, 250))
         st.image(img)
-        image_path = './upload_images/' + img_file.name
+        image_path = img_file.name
         with open(image_path, "wb") as f:
             f.write(img_file.getbuffer())
         if img_file is not None:
