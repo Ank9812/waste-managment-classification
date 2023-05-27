@@ -3,7 +3,7 @@
 
 
 
-# Waste Management Classification App ♻️
+# Waste Management Classification App
 ![Screenshot 2023-05-28 at 1 00 44 am](https://github.com/Ank9812/waste-managment-classification/assets/48951896/b362306d-64c4-40e5-a1b9-77232f515e77)
 This is a waste management classification app built using Streamlit and Tensorflow.
 https://ank9812-waste-managment-classification-app-3jb46r.streamlit.app/
