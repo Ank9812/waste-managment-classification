@@ -16,8 +16,16 @@ This application classifies waste into several categories:
 4. Household waste
 
 It uses a pre-trained deep learning model to classify the waste.
+Demo:
+
+
+https://github.com/Ank9812/waste-managment-classification/assets/48951896/b3dc3aa7-d324-4c65-abb1-0b6b20d5f11b
 
 ## Installation
+
+
+
+
 
 ### Prerequisites
 
