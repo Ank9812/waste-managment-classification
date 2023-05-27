@@ -52,7 +52,7 @@ Household_waste=[ 'bones',  'green_vege', 'leftovers','rotten_fruits', 'fruits_l
 index_to_class = {v: k for k, v in labels.items()}
 def processed_img(image):
     # Preprocess the image
-    img = image.resize=((224, 224))
+    img = image.resize((224, 224))
     img_array = img_to_array(img)
     img_array = np.expand_dims(img_array, axis=0)
     img_array = tf.keras.applications.resnet50.preprocess_input(img_array)
