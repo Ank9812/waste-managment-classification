@@ -93,7 +93,7 @@ def run():
 
         # Display the classification result
         with col2:
-            st.header("Classification Result")
+            st.subheader("Classification Result")
             st.success("**Predicted : " + predicted_class_name + '**')
 
             # Show the category of waste
